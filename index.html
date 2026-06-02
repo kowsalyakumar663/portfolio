@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Personal portfolio of Alex Dev — a passionate web developer specializing in modern, accessible, and semantic web experiences." />
+  <meta name="keywords" content="web developer, frontend, HTML5, CSS3, JavaScript, portfolio, accessible" />
+  <meta name="author" content="Alex Dev" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Alex Dev | Web Developer Portfolio" />
+  <meta property="og:description" content="Personal portfolio of Alex Dev — passionate about accessible, semantic web development." />
+  <meta property="og:url" content="https://alexdev.portfolio.dev" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Alex Dev | Web Developer Portfolio" />
+  <meta name="twitter:description" content="Frontend developer focused on clean, accessible, semantic code." />
+  <title>Alex Dev | Web Developer Portfolio</title>
+  <link rel="canonical" href="https://alexdev.portfolio.dev" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+    :root {
+      --bg: #0a0a0f; --surface: #12121a; --surface2: #1a1a26;
+      --accent: #6ee7b7; --accent2: #818cf8; --accent3: #f472b6;
+      --text: #e2e8f0; --muted: #94a3b8; --border: rgba(110,231,183,0.15); --radius: 12px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; overflow-x: hidden; }
+    .skip-link { position: absolute; top: -100%; left: 1rem; background: var(--accent); color: #000; padding: 0.5rem 1rem; border-radius: var(--radius); font-weight: 700; z-index: 9999; text-decoration: none; transition: top 0.2s; }
+    .skip-link:focus { top: 1rem; }
+    header { position: sticky; top: 0; z-index: 100; background: rgba(10,10,15,0.85); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+    nav { max-width: 1100px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--accent); text-decoration: none; }
+    .logo span { color: var(--accent2); }
+    .nav-list { list-style: none; display: flex; gap: 0.25rem; }
+    .nav-list a { color: var(--muted); text-decoration: none; padding: 0.4rem 0.85rem; border-radius: 999px; font-size: 0.9rem; font-weight: 500; transition: color 0.2s, background 0.2s; }
+    .nav-list a:hover, .nav-list a:focus { color: var(--accent); background: rgba(110,231,183,0.08); outline: none; }
+    .nav-list a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    #home { min-height: 92vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 4rem 1.5rem; position: relative; overflow: hidden; }
+    #home::before { content: ''; position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(110,231,183,0.08) 0%, transparent 70%); top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none; }
+    .hero-content { position: relative; z-index: 1; max-width: 720px; }
+    .hero-tag { display: inline-block; background: rgba(110,231,183,0.1); border: 1px solid var(--border); color: var(--accent); font-size: 0.8rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 0.35rem 1rem; border-radius: 999px; margin-bottom: 1.5rem; animation: fadeUp 0.6s ease both; }
+    h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.4rem, 7vw, 4.5rem); font-weight: 800; line-height: 1.1; letter-spacing: -1.5px; animation: fadeUp 0.7s 0.1s ease both; }
+    h1 em { font-style: normal; background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-desc { color: var(--muted); font-size: 1.1rem; margin: 1.25rem auto 2rem; max-width: 520px; animation: fadeUp 0.7s 0.2s ease both; }
+    .hero-actions { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; animation: fadeUp 0.7s 0.3s ease both; }
+    .btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.75rem 1.6rem; border-radius: 999px; font-size: 0.95rem; font-weight: 600; text-decoration: none; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; border: none; }
+    .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .btn-primary { background: var(--accent); color: #000; box-shadow: 0 0 24px rgba(110,231,183,0.25); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 36px rgba(110,231,183,0.4); }
+    .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+    .btn-outline:hover { background: var(--surface2); transform: translateY(-2px); }
+    section { padding: 5rem 1.5rem; max-width: 1100px; margin: 0 auto; }
+    .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+    h2 { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -0.5px; color: var(--text); margin-bottom: 1rem; }
+    .section-intro { color: var(--muted); max-width: 520px; margin-bottom: 3rem; }
+    #about { background: var(--surface); border-radius: 20px; max-width: 100%; padding: 5rem 2rem; }
+    .about-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    @media (max-width: 700px) { .about-inner { grid-template-columns: 1fr; } }
+    .about-avatar { width: 100%; max-width: 320px; aspect-ratio: 1; border-radius: 20px; background: linear-gradient(135deg, var(--surface2), #1e1e30); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 5rem; }
+    .about-text p { color: var(--muted); margin-bottom: 1rem; }
+    .skills-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+    .chip { background: var(--surface2); border: 1px solid var(--border); color: var(--accent); padding: 0.3rem 0.85rem; border-radius: 999px; font-size: 0.8rem; font-weight: 500; }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+    article.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s; position: relative; overflow: hidden; }
+    article.card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent2)); transform: scaleX(0); transition: transform 0.3s; }
+    article.card:hover { transform: translateY(-4px); border-color: rgba(110,231,183,0.3); box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
+    article.card:hover::before { transform: scaleX(1); }
+    .card-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+    .card h3 { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .card p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+    .card-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+    .tag { background: rgba(129,140,248,0.1); color: var(--accent2); font-size: 0.75rem; padding: 0.2rem 0.6rem; border-radius: 4px; font-weight: 500; }
+    #contact { background: var(--surface); border-radius: 20px; max-width: 100%; padding: 5rem 2rem; }
+    .contact-inner { max-width: 640px; margin: 0 auto; }
+    fieldset { border: none; padding: 0; }
+    legend { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1.25rem; }
+    label { display: block; font-size: 0.85rem; font-weight: 500; color: var(--muted); margin-bottom: 0.4rem; }
+    input, textarea { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.95rem; padding: 0.75rem 1rem; transition: border-color 0.2s, box-shadow 0.2s; }
+    input:focus, textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(110,231,183,0.15); }
+    input::placeholder, textarea::placeholder { color: #3a3a5c; }
+    textarea { resize: vertical; min-height: 140px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+    .btn-submit { width: 100%; padding: 0.9rem; font-size: 1rem; margin-top: 0.5rem; justify-content: center; }
+    footer { border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; color: var(--muted); font-size: 0.85rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header role="banner">
+    <nav aria-label="Primary navigation">
+      <a href="#home" class="logo" aria-label="Alex Dev – back to top">Alex<span>Dev</span></a>
+      <ul class="nav-list" role="list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main-content">
+    <section id="home" aria-labelledby="hero-heading">
+      <div class="hero-content">
+        <span class="hero-tag" aria-hidden="true">👋 Welcome to my portfolio</span>
+        <h1 id="hero-heading">I build <em>accessible</em><br>web experiences</h1>
+        <p class="hero-desc">Frontend developer passionate about clean, semantic HTML5, WCAG-compliant interfaces, and code that everyone can use.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+    <section id="about" aria-labelledby="about-heading">
+      <div class="about-inner">
+        <div class="about-img-wrap">
+          <div class="about-avatar" role="img" aria-label="Developer avatar">🧑‍💻</div>
+        </div>
+        <div class="about-text">
+          <p class="section-label">About Me</p>
+          <h2 id="about-heading">Turning ideas into semantic reality</h2>
+          <p>I'm a web developer focused on writing meaningful HTML, accessible interfaces, and performant CSS. I believe great code serves everyone — regardless of how they access the web.</p>
+          <p>Currently learning through Thiranex's Skill Development program, building real-world projects that score 100 on Lighthouse Accessibility and SEO audits.</p>
+          <div class="skills-chips" role="list" aria-label="Technical skills">
+            <span class="chip" role="listitem">HTML5</span>
+            <span class="chip" role="listitem">CSS3</span>
+            <span class="chip" role="listitem">JavaScript</span>
+            <span class="chip" role="listitem">ARIA</span>
+            <span class="chip" role="listitem">WCAG 2.1</span>
+            <span class="chip" role="listitem">SEO</span>
+            <span class="chip" role="listitem">Responsive Design</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="projects" aria-labelledby="projects-heading">
+      <p class="section-label">Work</p>
+      <h2 id="projects-heading">Featured Projects</h2>
+      <p class="section-intro">A selection of projects built with semantic HTML5, accessibility-first thinking, and clean code.</p>
+      <div class="projects-grid">
+        <article class="card" aria-labelledby="proj1-title">
+          <div class="card-icon" aria-hidden="true">🛒</div>
+          <h3 id="proj1-title">Accessible E-Commerce UI</h3>
+          <p>A fully keyboard-navigable product listing page with ARIA live regions for cart updates and screen-reader announcements.</p>
+          <div class="card-tags"><span class="tag">HTML5</span><span class="tag">CSS Grid</span><span class="tag">ARIA</span></div>
+        </article>
+        <article class="card" aria-labelledby="proj2-title">
+          <div class="card-icon" aria-hidden="true">📰</div>
+          <h3 id="proj2-title">Semantic Blog Platform</h3>
+          <p>A multi-page blog using semantic article, aside, and time elements with structured data markup for rich search results.</p>
+          <div class="card-tags"><span class="tag">Semantic HTML</span><span class="tag">SEO</span><span class="tag">JSON-LD</span></div>
+        </article>
+        <article class="card" aria-labelledby="proj3-title">
+          <div class="card-icon" aria-hidden="true">📊</div>
+          <h3 id="proj3-title">Data Dashboard</h3>
+          <p>Accessible data tables with sortable columns, ARIA sort attributes, and caption elements for context. Passes WCAG AA.</p>
+          <div class="card-tags"><span class="tag">Tables</span><span class="tag">WCAG AA</span><span class="tag">JavaScript</span></div>
+        </article>
+      </div>
+    </section>
+  </main>
+  <section id="contact" aria-labelledby="contact-heading">
+    <div class="contact-inner">
+      <p class="section-label">Say Hello</p>
+      <h2 id="contact-heading">Get in Touch</h2>
+      <p class="section-intro">Have a project in mind or just want to connect? Fill in the form below.</p>
+      <fieldset>
+        <legend>Contact Form</legend>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required autocomplete="name" aria-required="true" aria-describedby="name-hint" placeholder="Jane Smith" />
+            <span id="name-hint" style="font-size:0.75rem;color:var(--muted);display:block;margin-top:0.3rem;">Your full name</span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required autocomplete="email" aria-required="true" aria-describedby="email-hint" placeholder="jane@example.com" />
+            <span id="email-hint" style="font-size:0.75rem;color:var(--muted);display:block;margin-top:0.3rem;">We'll never share your email</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="Project inquiry…" />
+        </div>
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" required aria-required="true" aria-describedby="msg-hint" placeholder="Tell me about your project…"></textarea>
+          <span id="msg-hint" style="font-size:0.75rem;color:var(--muted);display:block;margin-top:0.3rem;">Minimum 20 characters</span>
+        </div>
+        <button type="button" class="btn btn-primary btn-submit" onclick="handleSubmit()">Send Message ✉️</button>
+      </fieldset>
+      <div id="form-status" role="status" aria-live="polite" aria-atomic="true" style="margin-top:1rem;color:var(--accent);font-weight:500;min-height:1.5rem;"></div>
+    </div>
+  </section>
+  <footer role="contentinfo">
+    <p>© 2026 <a href="#home">Alex Dev</a> · Built with semantic HTML5, CSS3 &amp; care for accessibility ♿</p>
+  </footer>
+  <script>
+    function handleSubmit() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const status = document.getElementById('form-status');
+      if (!name || !email || !message) { status.style.color='var(--accent3)'; status.textContent='⚠️ Please fill in all required fields.'; return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { status.style.color='var(--accent3)'; status.textContent='⚠️ Please enter a valid email address.'; return; }
+      if (message.length < 20) { status.style.color='var(--accent3)'; status.textContent='⚠️ Message must be at least 20 characters.'; return; }
+      status.style.color='var(--accent)'; status.textContent='✅ Message sent! Thank you, ' + name + '.';
+    }
+  </script>
+</body>
+    </html>
