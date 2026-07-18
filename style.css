@@ -1,0 +1,298 @@
+/* ============================================
+   Kowsalya Kumar — Portfolio
+   Theme: developer's case file / dossier
+   ============================================ */
+
+:root {
+  --ink: #e9e6db;
+  --ink-dim: #a8a396;
+  --paper: #16181c;
+  --paper-raised: #1d2024;
+  --line: #33363c;
+  --stamp: #c1443b;
+  --tag: #e0a940;
+  --mono: "JetBrains Mono", "Fira Code", ui-monospace, "SF Mono", Consolas, monospace;
+  --sans: "Inter", -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.6;
+}
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 28px 20px 60px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Header ---------- */
+
+.site-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 2px solid var(--line);
+  padding-bottom: 18px;
+  margin-bottom: 28px;
+}
+
+.name {
+  font-family: var(--mono);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.name .dot {
+  color: var(--stamp);
+}
+
+.role {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--ink-dim);
+  text-transform: lowercase;
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+}
+
+/* nav styled like folder tabs */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tabs a {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--ink-dim);
+  text-decoration: none;
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  background: var(--paper-raised);
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.tabs a:hover {
+  color: var(--ink);
+  background: #23262b;
+}
+
+.tabs a.active {
+  color: var(--tag);
+  background: var(--paper);
+  border-color: var(--tag);
+  position: relative;
+  top: 1px;
+}
+
+/* ---------- Card (the "case file" document) ---------- */
+
+.card {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 32px 28px;
+  position: relative;
+  flex: 1;
+}
+
+.card::before {
+  content: "FILE";
+  position: absolute;
+  top: -10px;
+  right: 24px;
+  background: var(--stamp);
+  color: #16181c;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 3px 10px;
+  border-radius: 3px;
+  transform: rotate(2deg);
+}
+
+.card h1 {
+  font-family: var(--mono);
+  font-size: 1.6rem;
+  margin: 0 0 4px;
+  color: var(--ink);
+}
+
+.card h2 {
+  font-family: var(--mono);
+  font-size: 1.05rem;
+  color: var(--tag);
+  margin: 28px 0 12px;
+  padding-top: 18px;
+  border-top: 1px dashed var(--line);
+}
+
+.card h2:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.tagline {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--ink-dim);
+  margin: 0 0 20px;
+}
+
+.card p {
+  color: var(--ink);
+  font-size: 0.98rem;
+}
+
+/* ---------- Contact / data list ---------- */
+
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-list li {
+  display: flex;
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px dotted var(--line);
+  font-size: 0.94rem;
+}
+
+.contact-list li:last-child {
+  border-bottom: none;
+}
+
+.contact-list li span {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--tag);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  min-width: 92px;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.contact-list li a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+}
+
+.contact-list li a:hover {
+  text-decoration-color: var(--tag);
+  color: var(--tag);
+}
+
+/* ---------- Form ---------- */
+
+form {
+  margin-top: 8px;
+}
+
+form > div {
+  margin-bottom: 16px;
+}
+
+.field-label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--tag);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+input, textarea {
+  width: 100%;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 10px 12px;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 0.95rem;
+}
+
+input:focus, textarea:focus {
+  outline: 2px solid var(--tag);
+  outline-offset: 1px;
+  border-color: var(--tag);
+}
+
+textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.submit {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  background: var(--stamp);
+  color: #16181c;
+  border: none;
+  border-radius: 6px;
+  padding: 11px 22px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.submit:hover {
+  opacity: 0.85;
+}
+
+/* ---------- Footer ---------- */
+
+.site-foot {
+  margin-top: 32px;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--ink-dim);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 480px) {
+  .wrap {
+    padding: 20px 14px 40px;
+  }
+  .card {
+    padding: 24px 18px;
+  }
+  .site-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .contact-list li {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .contact-list li span {
+    min-width: 0;
+  }
+}
