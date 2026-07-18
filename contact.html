@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Kowsalya Kumar</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site-head">
+    <div>
+      <div class="name">Kowsalya Kumar</div>
+      <div class="role">aspiring software developer</div>
+    </div>
+    <nav class="tabs">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="project.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="certificate.html">Certificates</a>
+      <a href="hobbies.html">Hobbies</a>
+      <a href="education.html">Education</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+  <main class="card">
+    <h1>Get In Touch</h1>
+    <p class="tagline">// case file 03 — contact details</p>
+    <p>
+      Have a project in mind, a question, or just want to say hi?
+      Fill out the form below or reach me directly.
+    </p>
+    <ul class="contact-list">
+      <li><span>Email</span>kowsalyakumar663@gmail.com</li>
+    </ul>
+    <h2>Send a Message</h2>
+    <!--
+      GitHub Pages is static and can't process form submissions on its
+      own. To make this form actually send you email, sign up free at
+      https://formspree.io, get your form endpoint, and replace the
+      action URL below with it. Until then this form won't send anywhere.
+    -->
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <div>
+        <label class="field-label" for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div>
+        <label class="field-label" for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div>
+        <label class="field-label" for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit" class="submit">Send message</button>
+    </form>
+  </main>
+  <footer class="site-foot">
+    &copy; <span id="year"></span> Kowsalya Kumar — filed on GitHub Pages
+  </footer>
+</div>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
